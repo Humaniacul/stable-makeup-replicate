@@ -1,15 +1,15 @@
 build:
   gpu: true
   python_version: "3.10"
-  python_requirements: "requirements.txt"
+  python_requirements: requirements.txt
   system_packages:
-    - "libgl1-mesa-glx"
-    - "libglib2.0-0"
-    - "libsm6"
-    - "libxext6"
-    - "libxrender-dev"
-    - "libgomp1"
-    - "ffmpeg"
-    - "git"
+    - libgl1-mesa-glx
+    - libglib2.0-0
+    - libsm6
+    - libxext6
+    - libxrender-dev
+    - libgomp1
+    - ffmpeg
+    - git
 
 predict: "predict.py:Predictor" 
