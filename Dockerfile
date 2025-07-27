@@ -38,9 +38,9 @@ RUN pip install \
     numpy==1.24.3 \
     scikit-image==0.21.0 \
     face-alignment==1.3.5 \
-    mediapipe==0.10.7 \
+    mediapipe==0.10.8 \
     facexlib==0.3.0 \
-    spiga==1.1.1 \
+    spiga==0.0.6 \
     dlib==19.24.2 \
     requests==2.31.0 \
     matplotlib==3.7.2
