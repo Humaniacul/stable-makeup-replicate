@@ -18,6 +18,7 @@ build:
     - dlib==19.24.2
     - requests==2.31.0
     - matplotlib==3.7.2
+    - gradio==4.44.0
   system_packages:
     - libgl1-mesa-glx
     - libglib2.0-0

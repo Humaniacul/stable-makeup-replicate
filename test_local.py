@@ -17,13 +17,16 @@ def create_test_images():
     
     # Create a simple source image (face)
     source_img = Image.new('RGB', (512, 512), color='peachpuff')
-    source_img.save('test_source.jpg')
+    source_path = os.path.join(os.getcwd(), 'test_source.jpg')
+    source_img.save(source_path)
     
     # Create a simple reference image (makeup)
     reference_img = Image.new('RGB', (512, 512), color='lightpink')
-    reference_img.save('test_reference.jpg')
+    reference_path = os.path.join(os.getcwd(), 'test_reference.jpg')
+    reference_img.save(reference_path)
     
     print("✅ Created test images")
+    return source_path, reference_path
 
 def test_predictor():
     """Test the Predictor class"""
@@ -36,9 +39,11 @@ def test_predictor():
         predictor.setup()
         
         print("🎨 Testing makeup transfer...")
+        source_path, reference_path = create_test_images()
+        
         result_path = predictor.predict(
-            source_image="test_source.jpg",
-            reference_image="test_reference.jpg",
+            source_image=source_path,
+            reference_image=reference_path,
             makeup_intensity=1.0
         )
         
@@ -56,9 +61,6 @@ def test_predictor():
 
 if __name__ == "__main__":
     print("🧪 Starting local test...")
-    
-    # Create test images
-    create_test_images()
     
     # Test the predictor
     success = test_predictor()
